@@ -1,6 +1,5 @@
 import { navIcons, navLinks } from "@data";
 import dayjs from "dayjs";
-import { SeparatorVerticalIcon, Tally1Icon } from "lucide-react";
 import { useState, useEffect } from "react";
 
 function Navbar() {
