@@ -57,8 +57,6 @@ function Dock() {
         };
     }, []);
 
-    const toggleApp = (app) => {
-    };
 
     const dockApp = () => {
         return dockApps.map(({id, name, icon, canOpen}) => (
