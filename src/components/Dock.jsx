@@ -1,10 +1,13 @@
-import {dockApps} from "@data";
-import {useGSAP} from "@gsap/react";
+import { dockApps } from "@data";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import {useRef} from "react";
-import {Tooltip} from "react-tooltip";
+import { useRef } from "react";
+import { Tooltip } from "react-tooltip";
+import useWindowStore from "@store/window.js";
 
 function Dock() {
+    const {openWindow, closeWindow, windows} = useWindowStore();
+
     const dockRef = useRef(null);
 
     useGSAP(() => {
@@ -45,7 +48,7 @@ function Dock() {
                     y: 0,
                     duration: 0.3,
                     ease: "power1.out",
-                })
+                }),
             );
 
         dock.addEventListener("mousemove", handleMouseMove);
@@ -57,6 +60,19 @@ function Dock() {
         };
     }, []);
 
+    function toggleApp(app) {
+        if (!app.canOpen) return;
+
+        const window = windows[app.id];
+
+        if (window.isOpen) {
+            closeWindow(app.id);
+        } else {
+            openWindow(app.id);
+        }
+
+
+    }
 
     const dockApp = () => {
         return dockApps.map(({id, name, icon, canOpen}) => (
