@@ -14,7 +14,9 @@ function Navbar() {
 	const navlink = () => {
 		return navLinks.map(({id, name, type}) =>
 			(
-				<li key={id} onClick={() => openWindow(type)}>{name}</li>
+				<li key={id}
+				    className="cursor-pointer"
+				    onClick={() => openWindow(type)}>{name}</li>
 			),
 		);
 	};
@@ -22,7 +24,10 @@ function Navbar() {
 	const navIcon = () => {
 		return navIcons.map(({id, img}) => (
 			<li key={id}>
-				<img src={img} className="icon-hover" alt={`icon-${img}`} />
+				<img loading="lazy"
+				     src={img}
+				     className="icon-hover"
+				     alt={`icon-${img}`} />
 			</li>
 		));
 	};
@@ -38,7 +43,7 @@ function Navbar() {
 	return (
 		<nav>
 			<div>
-				<img src="/images/logo.svg" alt="logo" />
+				<img loading="lazy" src="/images/logo.svg" alt="logo" />
 				<p className="font-bold">Fauzan Yusuf's Portfolio</p>
 				<ul>{navlink()}</ul>
 			</div>

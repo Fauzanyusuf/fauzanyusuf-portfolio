@@ -10,23 +10,28 @@ import Finder from "@windows/Finder.jsx";
 import Text from "@windows/Text.jsx";
 import Image from "@windows/Image.jsx";
 import Contact from "@windows/Contact.jsx";
+import Home from "@components/Home.jsx";
+import Photos from "@windows/Photos.jsx";
 
 gsap.registerPlugin(Draggable);
 
 function App() {
 	return (
 		<main>
-			<Navbar/>
-			<Welcome/>
-			<Dock/>
+			<Navbar />
+			<Welcome />
+			<Dock />
 			
-			<Terminal/>
-			<Safari/>
-			<Resume/>
-			<Finder/>
-			<Text/>
-			<Image/>
-			<Contact/>
+			<Terminal />
+			<Safari />
+			<Resume />
+			<Finder />
+			<Text />
+			<Image />
+			<Contact />
+			<Photos />
+			
+			<Home />
 		</main>
 	);
 }

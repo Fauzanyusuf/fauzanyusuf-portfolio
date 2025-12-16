@@ -24,13 +24,16 @@ function Text() {
 	return (
 		<>
 			<div id="window-header">
-				<WindowControls target="txtfile"/>
+				<WindowControls target="txtfile" />
 				<h2>{name}</h2>
 			</div>
 			<div className="p-5 space-y-6 bg-white">
 				{image ? (
 					<div className="w-full">
-						<img src={image} alt={name} className="w-full h-auto rounded"/>
+						<img loading="lazy"
+						     src={image}
+						     alt={name}
+						     className="w-full h-auto rounded" />
 					</div>
 				) : null}
 				{subtitle ? (

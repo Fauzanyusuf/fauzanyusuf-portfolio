@@ -32,10 +32,10 @@ function Finder() {
 						key={item.id}
 						className={clsx(item.id === activeLocation.id && "active")}
 						onClick={() => setActiveLocation(item)}>
-						<img
-							src={item.icon}
-							className="w-4"
-							alt={item.name}/>
+						<img loading="lazy"
+						     src={item.icon}
+						     className="w-4"
+						     alt={item.name} />
 						<p className="text-sm font-medium truncate">
 							{item.name}
 						</p>
@@ -55,9 +55,9 @@ function Finder() {
 				key={item.id}
 				className={item.position}
 				onClick={() => openItem(item)}>
-				<img
-					src={item.icon}
-					alt={item.name}/>
+				<img loading="lazy"
+				     src={item.icon}
+				     alt={item.name} />
 				<p>
 					{item.name}
 				</p>
@@ -67,8 +67,8 @@ function Finder() {
 	return (
 		<>
 			<div id="window-header">
-				<WindowControls target="finder"/>
-				<Search className="icon"/>
+				<WindowControls target="finder" />
+				<Search className="icon" />
 			</div>
 			<div className="bg-white flex h-full">
 				<div className="sidebar">
